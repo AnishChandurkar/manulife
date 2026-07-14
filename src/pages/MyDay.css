@@ -1,0 +1,7 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.sidebar-gradient {
+  background: linear-gradient(180deg, #006d37 0%, #003216 100%);
+}

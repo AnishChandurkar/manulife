@@ -1,0 +1,17 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.advisor-dashboard-root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #F4F7F5;
+}
+
+.advisor-dashboard-root .ai-glass {
+  background: rgba(230, 246, 238, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.advisor-dashboard-root .sidebar-gradient {
+  background: linear-gradient(180deg, #006d37 0%, #003216 100%);
+}
