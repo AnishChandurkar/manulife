@@ -1,15 +1,34 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { usePrototype } from '../context/PrototypeContext';
 
 export default function Topbar({ onToggleAI }) {
   const location = useLocation();
   const path = location.pathname;
+  const { role } = usePrototype();
 
   const isPortal = path.startsWith('/dashboard') || 
                    path.startsWith('/performance-matrix') || 
                    path.startsWith('/agency-explorer') || 
                    path.startsWith('/agency-detail') || 
-                   path.startsWith('/recruitment-analytics');
+                   path.startsWith('/recruitment-analytics') ||
+                   path.startsWith('/advisor-dashboard') ||
+                   path.startsWith('/customer-720') ||
+                   path.startsWith('/my-day') ||
+                   path.startsWith('/content-studio') ||
+                   path.startsWith('/meetings') ||
+                   path.startsWith('/proposal-intelligence');
+
+  const pageTitle = path.startsWith('/advisor-dashboard') ? 'Advisor Dashboard'
+    : path.startsWith('/my-day') ? 'My Day'
+    : path.startsWith('/customer-720') ? 'Customer 720'
+    : path.startsWith('/content-studio') ? 'Content Studio'
+    : path.startsWith('/meetings') ? 'Meeting Copilot'
+    : path.startsWith('/proposal-intelligence') ? 'Proposal Intelligence'
+    : path.startsWith('/recruitment-analytics') ? 'Recruitment Analytics'
+    : path.startsWith('/agency-explorer') ? 'Agency Explorer'
+    : path.startsWith('/performance-matrix') ? 'Performance Matrix'
+    : 'District Performance';
 
   if (path === '/login') return null; // No topbar on login screen
 
@@ -49,7 +68,7 @@ export default function Topbar({ onToggleAI }) {
   return (
     <header className="sticky top-0 w-full h-16 bg-white flex justify-between items-center px-8 shadow-sm z-40 border-b border-outline-variant">
       <div className="flex items-center gap-8">
-        <h1 className="text-[24px] font-semibold text-on-surface">District Performance</h1>
+        <h1 className="text-[24px] font-semibold text-on-surface">{pageTitle}</h1>
         <nav className="hidden md:flex items-center gap-6 h-full">
           <Link to="/dashboard" className={`py-5 text-[14px] font-medium transition-colors ${path === '/dashboard' ? 'text-primary border-b-2 border-primary font-bold' : 'text-on-surface-variant hover:text-primary'}`}>Dashboard</Link>
           <Link to="/agency-explorer" className={`py-5 text-[14px] font-medium transition-colors ${path.startsWith('/agency-explorer') ? 'text-primary border-b-2 border-primary font-bold' : 'text-on-surface-variant hover:text-primary'}`}>Advisors</Link>
@@ -68,6 +87,7 @@ export default function Topbar({ onToggleAI }) {
             <div className="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-outline-variant">
               <img className="w-full h-full object-cover" alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi-waDZQgjoAPoiuAptNqx65DPxS1ARHykhjBp0MCzj4TbrQiQTlmGvFHkerMd0npY0hnGr_PG4byeShYslCciIyXf5G26Epq-sECqMqjT9AJkGKlS5PT1XJiZ14i6TsYADA3KYTm4pDG55GqFgnxtvdHG2y-rzW6P84Ny_UdMLcxbq4Q3LXd7f1uE5OPvrHqPmrcKb-T8KyMk5lIlq65Z-7tAUXqbcOLN0zzc3iVETMNYAKR5RTUbYCAReVmGLRddpX46r5nAXr7g" />
             </div>
+            <span className="hidden lg:inline text-xs font-semibold text-on-surface-variant">{role}</span>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 const funnelStages = [
   { label: 'Total Leads', count: 2840, width: '100%', color: 'bg-sidebar-bg', pct: '100%' },
@@ -27,6 +27,8 @@ const stageBadge = (stage) => {
 };
 
 export default function RecruitmentAnalytics() {
+  const [selected, setSelected] = useState(null);
+  const [actionSent, setActionSent] = useState(false);
   return (
     <div className="p-8 bg-surface-gray min-h-screen">
       {/* Header */}
@@ -71,7 +73,7 @@ export default function RecruitmentAnalytics() {
         <div className="col-span-12 lg:col-span-5 bg-white rounded-xl shadow-sm p-6 border border-outline-variant">
           <h3 className="text-[24px] font-semibold text-on-surface mb-6">Recruitment Funnel</h3>
           <div className="space-y-4">
-            {funnelStages.map((stage, i) => (
+            {funnelStages.map((stage) => (
               <div key={stage.label}>
                 <div className="flex justify-between items-center text-[13px] mb-2">
                   <span className="font-medium text-on-surface">{stage.label}</span>
@@ -108,7 +110,7 @@ export default function RecruitmentAnalytics() {
               </thead>
               <tbody className="divide-y divide-surface-variant">
                 {candidates.map(c => (
-                  <tr key={c.name} className="hover:bg-surface-container-lowest transition-colors">
+                  <tr key={c.name} onClick={() => { setSelected(c); setActionSent(false); }} className="hover:bg-surface-container-lowest transition-colors cursor-pointer">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container font-bold text-xs">
@@ -159,6 +161,7 @@ export default function RecruitmentAnalytics() {
           </div>
         </div>
       </div>
+      {selected && <div className="fixed inset-0 bg-black/30 z-50 flex justify-end"><aside className="w-full max-w-md bg-white h-full p-7 shadow-2xl"><div className="flex justify-between items-start"><div><p className="text-primary text-sm font-semibold">Candidate detail</p><h3 className="text-2xl font-bold mt-1">{selected.name}</h3></div><button onClick={() => setSelected(null)} className="material-symbols-outlined">close</button></div><div className="mt-8 space-y-5"><div className="rounded-xl bg-primary/10 border border-primary/20 p-4"><p className="font-semibold">AI fit score: {Math.round(selected.rating * 20)}%</p><p className="text-sm mt-2">Strong alignment with the Ontario Central growth plan. Recommended next action: invite to the advisor career discovery session.</p></div><div className="text-sm space-y-2"><p><b>Stage:</b> {selected.stage}</p><p><b>Source:</b> {selected.source}</p><p><b>Last contact:</b> {selected.date}</p></div><button onClick={() => setActionSent(true)} className="bg-primary text-white px-5 py-3 rounded-lg font-semibold">Send recommended invite</button>{actionSent && <p className="text-primary font-semibold text-sm">Mock invitation sent and reminder scheduled.</p>}</div></aside></div>}
     </div>
   );
 }

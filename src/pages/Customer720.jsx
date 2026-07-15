@@ -2,7 +2,7 @@ import './Customer720.css';
 
 export default function Customer720() {
   return (
-    <div className="flex overflow-hidden">
+    <div className="customer-720-root flex overflow-hidden">
       {/* SideNavBar (Persistent Deep Green) */}
       <aside className="h-screen w-64 fixed left-0 top-0 bg-secondary dark:bg-inverse-surface border-r border-outline-variant flex flex-col py-6 z-50">
       <div className="px-6 mb-10">

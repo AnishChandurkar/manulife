@@ -15,3 +15,25 @@
 .advisor-dashboard-root .sidebar-gradient {
   background: linear-gradient(180deg, #006d37 0%, #003216 100%);
 }
+
+/* These views render inside AppLayout, which already supplies the navigation
+   and top bar. Keep their content, but use the shared dashboard frame. */
+.advisor-dashboard-root {
+  width: 100%;
+  min-height: 100%;
+  background: #F4F7F5;
+  color: #181c1b;
+}
+
+.advisor-dashboard-root > aside,
+.advisor-dashboard-root > main > header {
+  display: none;
+}
+
+.advisor-dashboard-root > main {
+  width: 100%;
+  min-height: 100%;
+  margin: 0 !important;
+  padding: 32px;
+  background: #F4F7F5;
+}

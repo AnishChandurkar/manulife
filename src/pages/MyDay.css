@@ -5,3 +5,28 @@
 .sidebar-gradient {
   background: linear-gradient(180deg, #006d37 0%, #003216 100%);
 }
+
+/* My Day uses the shared AppLayout navigation and top bar. */
+.my-day-root {
+  width: 100%;
+  min-height: 100%;
+  overflow: visible !important;
+  background: #F4F7F5;
+  color: #181c1b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.my-day-root > aside,
+.my-day-root > main > header {
+  display: none;
+}
+
+.my-day-root > main {
+  min-height: 100%;
+  margin-left: 0 !important;
+  background: #F4F7F5;
+}
+
+.my-day-root .p-container-desktop {
+  padding: 32px;
+}

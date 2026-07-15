@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { roles, usePrototype } from '../context/PrototypeContext';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -7,6 +8,7 @@ export default function SignIn() {
   const [remember, setRemember] = useState(false);
   const [isFocused, setIsFocused] = useState({ email: false, password: false });
   const navigate = useNavigate();
+  const { role, setRole } = usePrototype();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,6 +67,11 @@ export default function SignIn() {
             <h2 className="text-[32px] font-semibold text-on-surface">Sign in to Platform</h2>
             <p className="text-[16px] text-on-surface-variant">Welcome back! Please enter your details.</p>
           </div>
+          <label className="block text-[14px] font-medium text-on-surface-variant">Demo role
+            <select value={role} onChange={(e) => setRole(e.target.value)} className="mt-2 w-full rounded-xl border border-outline-variant bg-white px-4 py-3 text-on-surface">
+              {roles.map((item) => <option key={item}>{item}</option>)}
+            </select>
+          </label>
           {/* SSO Section */}
           <button 
             type="button" 
