@@ -1,18 +1,29 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { roles, usePrototype } from '../context/PrototypeContext';
+import { getRoleConfig } from '../config/roleConfig';
 
 export default function Topbar({ onToggleAI }) {
   const location = useLocation();
   const path = location.pathname;
+  const { role, setRole } = usePrototype();
+  const roleConfig = getRoleConfig(role);
 
   const isPortal = path.startsWith('/dashboard') || 
+                   path.startsWith('/approval-queue') ||
                    path.startsWith('/performance-matrix') || 
                    path.startsWith('/agency-explorer') || 
                    path.startsWith('/agency-detail') || 
                    path.startsWith('/recruitment-analytics') ||
                    path.startsWith('/advisor-dashboard') ||
                    path.startsWith('/customer-720') ||
-                   path.startsWith('/my-day');
+                   path.startsWith('/my-day') ||
+                   path.startsWith('/content-studio') ||
+                   path.startsWith('/meetings') ||
+                   path.startsWith('/proposal-intelligence') ||
+                   path.startsWith('/service-requests') ||
+                   path.startsWith('/rewards') ||
+                   path.startsWith('/notifications');
 
   if (path === '/login') return null; // No topbar on login screen
 
@@ -28,6 +39,9 @@ export default function Topbar({ onToggleAI }) {
           </div>
         </div>
         <div className="flex items-center gap-6">
+        <select aria-label="Demo role switcher" value={role} onChange={(e) => setRole(e.target.value)} className="hidden lg:block rounded-lg border border-outline-variant bg-white px-3 py-2 text-sm font-semibold text-on-surface">
+          {roles.map((item) => <option key={item}>{item}</option>)}
+        </select>
           <div className="flex items-center gap-4 text-on-surface-variant">
             <button className="flex items-center gap-1 hover:text-primary transition-colors">
               <span className="material-symbols-outlined text-[20px]">search</span>
@@ -52,13 +66,7 @@ export default function Topbar({ onToggleAI }) {
   return (
     <header className="sticky top-0 w-full h-16 bg-white flex justify-between items-center px-8 shadow-sm z-40 border-b border-outline-variant">
       <div className="flex items-center gap-8">
-        <h1 className="text-[24px] font-semibold text-on-surface">District Performance</h1>
-        <nav className="hidden md:flex items-center gap-6 h-full">
-          <Link to="/dashboard" className={`py-5 text-[14px] font-medium transition-colors ${path === '/dashboard' ? 'text-primary border-b-2 border-primary font-bold' : 'text-on-surface-variant hover:text-primary'}`}>Dashboard</Link>
-          <Link to="/agency-explorer" className={`py-5 text-[14px] font-medium transition-colors ${path.startsWith('/agency-explorer') ? 'text-primary border-b-2 border-primary font-bold' : 'text-on-surface-variant hover:text-primary'}`}>Advisors</Link>
-          <a href="#" className="text-on-surface-variant hover:text-primary py-5 text-[14px] font-medium transition-colors">Proposals</a>
-          <a href="#" className="text-on-surface-variant hover:text-primary py-5 text-[14px] font-medium transition-colors">Claims</a>
-        </nav>
+        <h1 className="text-[24px] font-semibold text-on-surface">{roleConfig.title}</h1>
       </div>
       <div className="flex items-center gap-6">
         <button onClick={onToggleAI} className="bg-cta-coral text-white px-6 py-2 rounded-full font-bold text-[14px] shadow-md hover:opacity-90 transition-all flex items-center gap-2 active:scale-95">

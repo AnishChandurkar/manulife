@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { candidates as candidateRecords } from '../data/mockData';
 
 const funnelStages = [
   { label: 'Total Leads', count: 2840, width: '100%', color: 'bg-sidebar-bg', pct: '100%' },
@@ -8,20 +9,14 @@ const funnelStages = [
   { label: 'Hired', count: 85, width: '12%', color: 'bg-active-green', pct: '3.0%' },
 ];
 
-const candidates = [
-  { name: 'Angela Foster', source: 'LinkedIn', stage: 'Interview', rating: 4.8, date: 'Oct 14' },
-  { name: 'Brian Tam', source: 'Referral', stage: 'Offer', rating: 4.6, date: 'Oct 12' },
-  { name: 'Priya Mehta', source: 'University', stage: 'Hired', rating: 4.9, date: 'Oct 10' },
-  { name: 'Carlos Gomez', source: 'Job Board', stage: 'Contacted', rating: 3.9, date: 'Oct 8' },
-  { name: 'Yasmine Ali', source: 'Referral', stage: 'Interview', rating: 4.5, date: 'Oct 6' },
-];
+const candidates = candidateRecords.map((candidate, index) => ({ ...candidate, source: ['LinkedIn', 'Referral', 'University', 'Job Board'][index % 4], rating: (4 + (index % 10) / 10).toFixed(1), date: `Oct ${18 - index}` }));
 
 const stageBadge = (stage) => {
   const map = {
     'Contacted': 'bg-surface-container text-on-surface-variant',
     'Interview': 'bg-yellow-100 text-yellow-700',
     'Offer': 'bg-primary-container/20 text-primary',
-    'Hired': 'bg-green-100 text-green-700',
+    'Onboarded': 'bg-green-100 text-green-700',
   };
   return map[stage] || 'bg-surface-container text-on-surface-variant';
 };
