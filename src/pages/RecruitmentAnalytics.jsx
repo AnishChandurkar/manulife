@@ -120,7 +120,7 @@ export default function RecruitmentAnalytics() {
                     </td>
                     <td className="px-6 py-4">
                       <span className="flex items-center gap-1 text-[14px] font-medium text-on-surface">
-                        <span className="material-symbols-outlined text-[16px] text-yellow-500" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                        <span className="material-symbols-outlined text-[16px] text-yellow-500 material-symbols-filled">star</span>
                         {c.rating}
                       </span>
                     </td>

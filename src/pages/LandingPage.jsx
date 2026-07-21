@@ -26,8 +26,8 @@ export default function LandingPage() {
         </div>
         <div className="container mx-auto px-8 z-10 grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-7 flex flex-col justify-center gap-4">
-            <h2 className="text-white font-headline-md font-bold mb-2 opacity-90 text-[24px]">Manulife</h2>
-            <h1 className="text-white font-display-lg leading-tight max-w-xl text-[48px] font-bold">
+            <h2 className="text-white font-bold mb-2 opacity-90 text-[24px]">Manulife</h2>
+            <h1 className="text-white leading-tight max-w-xl text-[48px] font-bold">
               Can cloud <span className="italic font-normal">gazing</span> boost your mood?
             </h1>
             <p className="text-white/80 text-lg max-w-md">
@@ -147,7 +147,7 @@ export default function LandingPage() {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="material-symbols-outlined text-active-green text-3xl">dataset</span>
-              <span className="text-white font-headline-md font-bold tracking-tighter uppercase text-[24px]">Manulife</span>
+              <span className="text-white font-bold tracking-tighter uppercase text-[24px]">Manulife</span>
             </div>
             <p className="text-white/60 text-[14px]">Empowering individuals and businesses to make better financial decisions for a secure future.</p>
           </div>

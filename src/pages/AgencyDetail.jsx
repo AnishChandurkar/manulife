@@ -118,7 +118,7 @@ export default function AgencyDetail() {
             </div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary-container text-white rounded-lg flex items-center justify-center">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
+                <span className="material-symbols-outlined material-symbols-filled">auto_awesome</span>
               </div>
               <h4 className="text-[20px] font-semibold text-on-surface">AI Strategic Insight</h4>
             </div>

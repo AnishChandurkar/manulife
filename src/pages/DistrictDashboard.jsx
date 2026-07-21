@@ -91,7 +91,7 @@ export default function DistrictDashboard() {
         <div className="col-span-12 lg:col-span-4 bento-card bg-[#eefaf3] border border-primary-container/20">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
-              <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
+              <span className="material-symbols-outlined material-symbols-filled">auto_awesome</span>
             </div>
             <h3 className="text-[24px] font-semibold text-on-surface">AI Predictive Insights</h3>
           </div>

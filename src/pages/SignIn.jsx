@@ -17,13 +17,13 @@ export default function SignIn() {
   };
 
   return (
-    <main className="w-full h-screen flex flex-col md:flex-row bg-[#f7faf8]">
+    <main className="w-full h-screen flex flex-col md:flex-row bg-background">
       {/* Left Side: Brand Visual */}
       <section className="hidden md:flex w-1/2 bg-sidebar-bg relative overflow-hidden items-center justify-center">
         <div className="relative z-10 px-16 text-white space-y-6">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-12 bg-active-green flex items-center justify-center rounded-lg">
-              <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>account_balance</span>
+              <span className="material-symbols-outlined text-3xl material-symbols-filled">account_balance</span>
             </div>
             <span className="font-semibold text-[24px] tracking-tight">Manulife</span>
           </div>
@@ -54,7 +54,7 @@ export default function SignIn() {
       </section>
 
       {/* Right Side: Login Form */}
-      <section className="w-full md:w-1/2 bg-[#f7faf8] flex flex-col items-center justify-center px-6 md:px-24 py-12 relative">
+      <section className="w-full md:w-1/2 bg-background flex flex-col items-center px-6 md:px-24 py-12 relative overflow-y-auto">
         {/* Mobile Logo */}
         <div className="md:hidden absolute top-10 left-10 flex items-center gap-2">
           <div className="w-8 h-8 bg-active-green flex items-center justify-center rounded">
@@ -62,7 +62,7 @@ export default function SignIn() {
           </div>
           <span className="font-semibold text-[24px] text-on-surface">Manulife</span>
         </div>
-        <div className="w-full max-w-md space-y-8">
+        <div className="w-full max-w-md flex-1 flex flex-col justify-center space-y-8 py-8">
           <div className="space-y-2">
             <h2 className="text-[32px] font-semibold text-on-surface">Sign in to Platform</h2>
             <p className="text-[16px] text-on-surface-variant">Welcome back! Please enter your details.</p>
@@ -85,7 +85,7 @@ export default function SignIn() {
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-outline-variant"></div>
             </div>
-            <div className="relative px-4 bg-[#f7faf8]">
+            <div className="relative px-4 bg-background">
               <span className="text-[14px] font-medium text-outline">OR</span>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function SignIn() {
           </div>
         </div>
         {/* Footer info */}
-        <footer className="absolute bottom-10 text-center w-full max-w-md px-6">
+        <footer className="text-center w-full max-w-md px-6 pb-2">
           <div className="flex justify-center gap-6 mb-4">
             <a className="text-[14px] font-medium text-outline hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
             <a className="text-[14px] font-medium text-outline hover:text-on-surface transition-colors" href="#">Terms of Use</a>

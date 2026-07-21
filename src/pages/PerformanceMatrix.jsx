@@ -11,7 +11,7 @@ const matrixData = [
 
 export default function PerformanceMatrix() {
   return (
-    <div className="pt-6 pb-12 px-8 grid grid-cols-12 gap-6 bg-[#f7faf8] min-h-screen">
+    <div className="pt-6 pb-12 px-8 grid grid-cols-12 gap-6 bg-background min-h-screen">
       {/* Header */}
       <div className="col-span-12 flex justify-between items-end mb-4">
         <div>
@@ -135,7 +135,7 @@ export default function PerformanceMatrix() {
         {/* Top Performer */}
         <div className="bg-sidebar-bg text-white rounded-xl p-6 overflow-hidden relative group">
           <div className="absolute -right-4 -top-4 opacity-20 group-hover:scale-110 transition-transform duration-700">
-            <span className="material-symbols-outlined text-[120px]" style={{ fontVariationSettings: "'FILL' 1" }}>workspace_premium</span>
+            <span className="material-symbols-outlined text-[120px] material-symbols-filled">workspace_premium</span>
           </div>
           <div className="relative z-10">
             <h3 className="text-active-green text-[14px] font-medium uppercase tracking-widest mb-4">Top Performer Q3</h3>
@@ -165,7 +165,7 @@ export default function PerformanceMatrix() {
         <div className="bg-[rgba(190,237,207,0.15)] rounded-xl p-6 border border-primary-container/20 flex flex-col backdrop-blur-sm">
           <div className="flex items-center space-x-3 mb-6">
             <div className="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
-              <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
+              <span className="material-symbols-outlined material-symbols-filled">auto_awesome</span>
             </div>
             <div>
               <p className="font-bold text-on-surface">AI Copilot</p>
