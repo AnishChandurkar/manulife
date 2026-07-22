@@ -53,9 +53,9 @@ function AppLayout() {
     location.pathname.startsWith('/proposal-intelligence') ||
     location.pathname.startsWith('/service-requests') ||
     location.pathname.startsWith('/rewards') ||
-    location.pathname.startsWith('/notifications');
     location.pathname.startsWith("/rewards") ||
     location.pathname.startsWith("/service-requests") ||
+    location.pathname.startsWith('/notifications');
     
 
   return (
@@ -87,8 +87,6 @@ function AppLayout() {
             <Route path="/content-studio" element={<RoleRoute><ContentStudio /></RoleRoute>} />
             <Route path="/meetings" element={<RoleRoute><MeetingCopilot /></RoleRoute>} />
             <Route path="/proposal-intelligence" element={<RoleRoute><ProposalIntelligence /></RoleRoute>} />
-            <Route path="/service-requests" element={<RoleRoute><Customer720 /></RoleRoute>} />
-            <Route path="/rewards" element={<RoleRoute><AdvisorDashboard /></RoleRoute>} />
             <Route path="/notifications" element={<RoleRoute><Notifications /></RoleRoute>} />
             {/* Fallback */}
             <Route path="*" element={<LandingPage />} />
