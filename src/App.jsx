@@ -16,6 +16,8 @@ import AdvisorDashboard from './pages/AdvisorDashboard';
 import RoleDashboard from './pages/RoleDashboard';
 import Customer720 from './pages/Customer720';
 import MyDay from './pages/MyDay';
+import Rewards from "./pages/Rewards";
+import ServiceRequests from "./pages/ServiceRequests";
 import ContentStudio from './pages/ContentStudio';
 import MeetingCopilot from './pages/MeetingCopilot';
 import ProposalIntelligence from './pages/ProposalIntelligence';
@@ -52,6 +54,8 @@ function AppLayout() {
     location.pathname.startsWith('/service-requests') ||
     location.pathname.startsWith('/rewards') ||
     location.pathname.startsWith('/notifications');
+    location.pathname.startsWith("/rewards") ||
+    location.pathname.startsWith("/service-requests") ||
     
 
   return (
@@ -78,6 +82,8 @@ function AppLayout() {
             <Route path="/advisor-dashboard" element={<RoleRoute><AdvisorDashboard /></RoleRoute>} />
             <Route path="/customer-720" element={<RoleRoute><Customer720 /></RoleRoute>} />
             <Route path="/my-day" element={<RoleRoute><MyDay /></RoleRoute>} />
+            <Route path="/rewards" element={<Rewards />} />
+            <Route path="/service-requests" element={<ServiceRequests />} />
             <Route path="/content-studio" element={<RoleRoute><ContentStudio /></RoleRoute>} />
             <Route path="/meetings" element={<RoleRoute><MeetingCopilot /></RoleRoute>} />
             <Route path="/proposal-intelligence" element={<RoleRoute><ProposalIntelligence /></RoleRoute>} />
