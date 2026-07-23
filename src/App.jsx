@@ -54,6 +54,8 @@ function AppLayout() {
     location.pathname.startsWith('/proposal-intelligence') ||
     location.pathname.startsWith('/service-requests') ||
     location.pathname.startsWith('/rewards') ||
+    location.pathname.startsWith("/rewards") ||
+    location.pathname.startsWith("/service-requests") ||
     location.pathname.startsWith('/notifications');
 
 
