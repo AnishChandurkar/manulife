@@ -26,10 +26,10 @@ export default function Customer720() {
       {/* Sidebar/Topbar are provided globally by AppLayout for this route */}
       <main className="flex-1 h-screen flex flex-col overflow-hidden">
       {/* Content Canvas */}
-      <div className="flex-1 overflow-y-auto p-8 pb-32 space-y-8">
+      <div className="flex-1 overflow-y-auto p-4 md:p-8 pb-40 md:pb-32 space-y-8">
       {/* Header Section */}
-      <section className="flex gap-8 items-start">
-      <div className="w-32 h-32 rounded-xl overflow-hidden shadow-sm border border-outline-variant flex-shrink-0">
+      <section className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+      <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden shadow-sm border border-outline-variant flex-shrink-0">
       <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP0PW2DQ0ssw7yFoC_4tL4ecGe8TwaGAwTdPdTEBUkzy-xVUXWi6wSJxrEw3FmezNlKrpj_J57DIpO-nO2QH2Oycs2nSo9C8RTlpWGOJTBY9ys3Aq8IpkhGiRgQoBYcp30KtfZgzK9U5bn9f4uet3k1QcheUUGm99f35x-Hvncq_oVZXp6VEwy_9ktfZLQJzxY3jP7y86ZtPC2YCDzoLJ5d1AvAAmV16ko0X87CGCjBedPhEYXtlmB"/>
       </div>
       <div className="flex-1">
@@ -41,7 +41,7 @@ export default function Customer720() {
                               </span>
       </div>
       <p className="text-base text-on-surface-variant mb-4">Senior Executive at Montreal Tech Solutions • Client since 2012</p>
-      <div className="flex gap-6">
+      <div className="flex flex-wrap gap-4 sm:gap-6">
       <div className="flex items-center gap-2 text-on-surface-variant">
       <span className="material-symbols-outlined text-[18px]">mail</span>
       <span className="text-sm">jp.tremblay@techsolutions.ca</span>
@@ -56,8 +56,8 @@ export default function Customer720() {
       </div>
       </div>
       </div>
-      <div className="flex flex-col items-end gap-2">
-      <div className="text-right">
+      <div className="flex flex-row sm:flex-col items-center sm:items-end gap-4 sm:gap-2 w-full sm:w-auto justify-between sm:justify-start">
+      <div className="text-left sm:text-right">
       <p className="text-xs text-on-surface-variant uppercase">Assigned Agent</p>
       <p className="text-lg font-semibold text-primary">Sarah Jenkins</p>
       </div>
@@ -70,7 +70,7 @@ export default function Customer720() {
       </div>
       </section>
       {/* KPI Grid */}
-      <section className="grid grid-cols-6 gap-4">
+      <section className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4">
       <div className="bg-white p-6 rounded-xl shadow-sm border border-outline-variant hover:border-primary transition-colors">
       <p className="text-xs text-on-surface-variant mb-1">CLV</p>
       <p className="text-2xl font-bold text-primary">$425k</p>
@@ -116,8 +116,8 @@ export default function Customer720() {
       </div>
       </section>
       {/* Main Body Grid: Timeline & Portfolio */}
-      <div className="grid grid-cols-3 gap-8">
-      <div className="col-span-2 space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="md:col-span-2 space-y-8">
       {/* Portfolio Table */}
       <div className="bg-white rounded-xl shadow-sm border border-outline-variant overflow-hidden">
       <div className="p-6 border-b border-outline-variant flex justify-between items-center">
@@ -126,6 +126,7 @@ export default function Customer720() {
                                       View All <span className="material-symbols-outlined text-[18px]">chevron_right</span>
       </button>
       </div>
+      <div className="overflow-x-auto">
       <table className="w-full text-left">
       <thead className="bg-background text-on-surface-variant text-sm font-semibold">
       <tr>
@@ -137,7 +138,7 @@ export default function Customer720() {
       <th className="px-6 py-4 text-right">Action</th>
       </tr>
       </thead>
-      <tbody className="divide-y divide-border-subtle">
+      <tbody className="divide-y divide-outline-variant">
       <tr className="hover:bg-primary/5 transition-colors group">
       <td className="px-6 py-5 text-sm font-semibold">LF-882901</td>
       <td className="px-6 py-5">
@@ -171,7 +172,7 @@ export default function Customer720() {
       </tbody>
       </table>
       </div>
-      {/* Opportunity Radar */}
+      </div>
       <div className="bg-white rounded-xl shadow-sm border border-outline-variant p-6">
       <div className="flex justify-between items-center mb-8">
       <div className="flex items-center gap-2">
@@ -180,7 +181,7 @@ export default function Customer720() {
       </div>
       <span className="text-xs text-on-surface-variant uppercase tracking-wider">AI-Driven Propensity</span>
       </div>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div className="space-y-4">
       <div className="p-4 bg-primary/5 border border-primary/20 rounded-xl flex justify-between items-center">
       <div>
@@ -188,7 +189,7 @@ export default function Customer720() {
       <p className="text-xs text-on-surface-variant">Gap detected in current coverage</p>
       </div>
       <div className="text-right">
-      <p className="font-bold text-primary text-title-lg">94%</p>
+      <p className="font-bold text-primary text-2xl">94%</p>
       <p className="text-xs text-on-surface-variant uppercase">Confidence</p>
       </div>
       </div>
@@ -198,7 +199,7 @@ export default function Customer720() {
       <p className="text-xs text-on-surface-variant">Based on recent liquidity event</p>
       </div>
       <div className="text-right">
-      <p className="font-bold text-primary text-title-lg">82%</p>
+      <p className="font-bold text-primary text-2xl">82%</p>
       <p className="text-xs text-on-surface-variant uppercase">Confidence</p>
       </div>
       </div>
@@ -222,10 +223,10 @@ export default function Customer720() {
       </div>
       {/* History Tabs */}
       <div className="bg-white rounded-xl shadow-sm border border-outline-variant overflow-hidden">
-      <div className="flex border-b border-outline-variant">
-      <button className="flex-1 py-4 text-sm font-semibold text-primary border-b-2 border-primary">Meeting History</button>
-      <button className="flex-1 py-4 text-sm font-semibold text-on-surface-variant hover:bg-background transition-colors">Service Requests</button>
-      <button className="flex-1 py-4 text-sm font-semibold text-on-surface-variant hover:bg-background transition-colors">Documents</button>
+      <div className="flex border-b border-outline-variant overflow-x-auto no-scrollbar">
+      <button className="flex-1 min-w-[110px] px-3 py-4 text-xs sm:text-sm font-semibold text-primary border-b-2 border-primary whitespace-nowrap">Meeting History</button>
+      <button className="flex-1 min-w-[110px] px-3 py-4 text-xs sm:text-sm font-semibold text-on-surface-variant hover:bg-background transition-colors whitespace-nowrap">Service Requests</button>
+      <button className="flex-1 min-w-[110px] px-3 py-4 text-xs sm:text-sm font-semibold text-on-surface-variant hover:bg-background transition-colors whitespace-nowrap">Documents</button>
       </div>
       <div className="p-0 overflow-x-auto">
       <table className="w-full text-left">
@@ -238,7 +239,7 @@ export default function Customer720() {
       <th className="px-6 py-3 text-right">Status</th>
       </tr>
       </thead>
-      <tbody className="divide-y divide-border-subtle">
+      <tbody className="divide-y divide-outline-variant">
       <tr className="hover:bg-primary/5 cursor-pointer transition-colors">
       <td className="px-6 py-4 text-sm">Oct 12, 2023</td>
       <td className="px-6 py-4 text-sm font-semibold">Annual Review</td>
@@ -262,7 +263,7 @@ export default function Customer720() {
                                                   </button>
       </td>
       <td className="px-6 py-4 text-right">
-      <span className="px-2 py-0.5 bg-accent-coral/10 text-cta-coral text-[10px] rounded-full font-bold uppercase">Follow-up Sent</span>
+      <span className="px-2 py-0.5 bg-cta-coral/10 text-cta-coral text-[10px] rounded-full font-bold uppercase">Follow-up Sent</span>
       </td>
       </tr>
       </tbody>
@@ -290,7 +291,7 @@ export default function Customer720() {
       </div>
       <div className="flex items-center justify-between p-4 bg-background rounded-lg border border-outline-variant">
       <div className="flex items-center gap-4">
-      <div className="w-10 h-10 rounded-full bg-accent-coral/10 flex items-center justify-center">
+      <div className="w-10 h-10 rounded-full bg-cta-coral/10 flex items-center justify-center">
       <span className="material-symbols-outlined text-cta-coral text-[20px]">account_balance_wallet</span>
       </div>
       <div>
@@ -299,7 +300,7 @@ export default function Customer720() {
       </div>
       </div>
       <div className="flex items-center gap-6">
-      <span className="px-2 py-0.5 bg-accent-coral/20 text-cta-coral text-[10px] font-bold rounded-full uppercase">High</span>
+      <span className="px-2 py-0.5 bg-cta-coral/20 text-cta-coral text-[10px] font-bold rounded-full uppercase">High</span>
       <span className="text-on-surface-variant text-sm font-semibold">Pending</span>
       </div>
       </div>
@@ -401,7 +402,7 @@ export default function Customer720() {
       </div>
       </div>
       {/* Household Map Section */}
-      <section className="bg-white p-10 rounded-xl shadow-sm border border-outline-variant">
+      <section className="bg-white p-5 md:p-10 rounded-xl shadow-sm border border-outline-variant">
       <h3 className="text-lg font-semibold text-on-surface mb-12">Household Relationship Map</h3>
       <div className="relative flex flex-col items-center">
       <div className="flex flex-col items-center z-10">
@@ -449,19 +450,19 @@ export default function Customer720() {
       </section>
       </div>
       {/* Sticky Action Bar */}
-      <footer className="fixed bottom-6 px-8 z-40">
-      <div className="bg-white/90 backdrop-blur-sm border border-outline-variant shadow-xl rounded-xl p-4 flex items-center justify-between">
+      <footer className="fixed bottom-0 md:bottom-6 inset-x-0 md:inset-x-auto md:px-8 z-40">
+      <div className="bg-white/95 md:bg-white/90 backdrop-blur-sm border-t md:border border-outline-variant shadow-xl md:rounded-xl p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
       <div className="flex items-center gap-3">
       <span className="material-symbols-outlined text-primary text-[24px] material-symbols-filled">bolt</span>
       <p className="text-sm font-semibold text-on-surface">High propensity for Life Insurance upgrade detected.</p>
       </div>
-      <div className="flex gap-3">
-      <button className="px-5 py-2.5 border border-primary text-primary font-semibold text-sm font-semibold rounded-lg hover:bg-primary/5 transition-colors">Schedule Meeting</button>
-      <button className="px-5 py-2.5 bg-primary text-white font-semibold text-sm font-semibold rounded-lg hover:opacity-90">Generate Proposal</button>
-      <button className="px-5 py-2.5 bg-primary text-white font-semibold text-sm font-semibold rounded-lg flex items-center gap-2 hover:scale-[1.02] transition-transform">
+      <div className="flex gap-3 overflow-x-auto no-scrollbar md:flex-wrap md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0">
+      <button className="flex-shrink-0 px-5 py-2.5 border border-primary text-primary font-semibold text-sm font-semibold rounded-lg hover:bg-primary/5 transition-colors">Schedule Meeting</button>
+      <button className="flex-shrink-0 px-5 py-2.5 bg-primary text-white font-semibold text-sm font-semibold rounded-lg hover:opacity-90">Generate Proposal</button>
+      <button className="flex-shrink-0 px-5 py-2.5 bg-primary text-white font-semibold text-sm font-semibold rounded-lg flex items-center gap-2 hover:scale-[1.02] transition-transform">
       <span className="material-symbols-outlined text-[18px]">auto_awesome</span> Meeting Copilot
                           </button>
-      <button className="px-5 py-2.5 border border-outline-variant text-on-surface-variant font-semibold text-sm font-semibold rounded-lg hover:bg-background transition-colors">Send Message</button>
+      <button className="flex-shrink-0 px-5 py-2.5 border border-outline-variant text-on-surface-variant font-semibold text-sm font-semibold rounded-lg hover:bg-background transition-colors">Send Message</button>
       </div>
       </div>
       </footer>

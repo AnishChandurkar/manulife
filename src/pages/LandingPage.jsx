@@ -14,7 +14,7 @@ export default function LandingPage() {
   return (
     <div className="flex-grow">
       {/* Hero Section */}
-      <section className="relative h-[600px] w-full flex items-center overflow-hidden">
+      <section className="relative min-h-[520px] h-auto md:h-[600px] w-full flex items-center overflow-hidden py-16 md:py-0">
         <div className="absolute inset-0 z-0">
           <div 
             className="w-full h-full bg-cover bg-center transition-transform duration-[20s] hover:scale-110" 
@@ -24,10 +24,10 @@ export default function LandingPage() {
           ></div>
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
-        <div className="container mx-auto px-8 z-10 grid grid-cols-12 gap-6">
+        <div className="container mx-auto px-4 md:px-8 z-10 grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-7 flex flex-col justify-center gap-4">
             <h2 className="text-white font-bold mb-2 opacity-90 text-[24px]">Manulife</h2>
-            <h1 className="text-white leading-tight max-w-xl text-[48px] font-bold">
+            <h1 className="text-white leading-tight max-w-xl text-[32px] md:text-[48px] font-bold">
               Can cloud <span className="italic font-normal">gazing</span> boost your mood?
             </h1>
             <p className="text-white/80 text-lg max-w-md">
@@ -89,8 +89,8 @@ export default function LandingPage() {
 
       {/* Secondary Content Section */}
       <section className="py-20 bg-surface-gray">
-        <div className="container mx-auto px-8">
-          <div className="flex justify-between items-end mb-12">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
             <div>
               <h2 className="text-on-surface font-bold text-[32px] mb-2">What's new at Manulife?</h2>
               <p className="text-on-surface-variant text-[16px] max-w-2xl">The latest insights on health, wealth, and planning for the long term, curated for our agency partners and clients.</p>
@@ -142,7 +142,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-sidebar-bg text-white py-12 px-8 border-t border-white/10">
+      <footer className="bg-sidebar-bg text-white py-12 px-4 md:px-8 border-t border-white/10">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-6">

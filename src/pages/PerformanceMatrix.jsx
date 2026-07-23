@@ -11,18 +11,18 @@ const matrixData = [
 
 export default function PerformanceMatrix() {
   return (
-    <div className="pt-6 pb-12 px-8 grid grid-cols-12 gap-6 bg-background min-h-screen">
+    <div className="pt-6 pb-12 px-4 md:px-8 grid grid-cols-12 gap-6 bg-background min-h-screen">
       {/* Header */}
-      <div className="col-span-12 flex justify-between items-end mb-4">
+      <div className="col-span-12 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-4">
         <div>
           <nav className="flex text-[14px] text-outline-variant space-x-2 mb-1">
             <Link to="/dashboard" className="hover:text-primary">Districts</Link>
             <span>/</span>
             <span className="text-primary">Ontario Central</span>
           </nav>
-          <h2 className="text-[32px] font-semibold text-on-surface">District Performance Matrix — Q3 2023</h2>
+          <h2 className="text-[24px] md:text-[32px] font-semibold text-on-surface">District Performance Matrix — Q3 2023</h2>
         </div>
-        <div className="flex space-x-3">
+        <div className="flex flex-wrap gap-3">
           <button className="flex items-center space-x-2 px-4 py-2 border border-outline-variant rounded-lg text-[14px] hover:bg-surface-container transition-colors">
             <span className="material-symbols-outlined text-[20px]">filter_list</span>
             <span>Filter</span>
@@ -35,7 +35,7 @@ export default function PerformanceMatrix() {
       </div>
 
       {/* Matrix Table + Risk Watchlist */}
-      <div className="col-span-12 lg:col-span-9 space-y-6">
+      <div className="col-span-12 md:col-span-8 lg:col-span-9 space-y-6">
         {/* Matrix Table */}
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           <div className="px-6 py-4 border-b border-surface-variant flex justify-between items-center bg-surface-bright">
@@ -131,7 +131,7 @@ export default function PerformanceMatrix() {
       </div>
 
       {/* Sidebar */}
-      <aside className="col-span-12 lg:col-span-3 space-y-6">
+      <aside className="col-span-12 md:col-span-4 lg:col-span-3 space-y-6">
         {/* Top Performer */}
         <div className="bg-sidebar-bg text-white rounded-xl p-6 overflow-hidden relative group">
           <div className="absolute -right-4 -top-4 opacity-20 group-hover:scale-110 transition-transform duration-700">

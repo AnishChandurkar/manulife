@@ -25,11 +25,11 @@ export default function RecruitmentAnalytics() {
   const [selected, setSelected] = useState(null);
   const [actionSent, setActionSent] = useState(false);
   return (
-    <div className="p-8 bg-surface-gray min-h-screen">
+    <div className="p-4 md:p-8 bg-surface-gray min-h-screen">
       {/* Header */}
-      <div className="flex justify-between items-start mb-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-8">
         <div>
-          <h2 className="text-[32px] font-semibold text-on-surface">Recruitment Analytics</h2>
+          <h2 className="text-[24px] md:text-[32px] font-semibold text-on-surface">Recruitment Analytics</h2>
           <p className="text-[16px] text-on-surface-variant mt-1">Q3 2023 — Ontario Central District</p>
         </div>
         <div className="flex gap-3">
@@ -65,7 +65,7 @@ export default function RecruitmentAnalytics() {
 
       <div className="grid grid-cols-12 gap-6">
         {/* Recruitment Funnel */}
-        <div className="col-span-12 lg:col-span-5 bg-white rounded-xl shadow-sm p-6 border border-outline-variant">
+        <div className="col-span-12 md:col-span-5 bg-white rounded-xl shadow-sm p-6 border border-outline-variant">
           <h3 className="text-[24px] font-semibold text-on-surface mb-6">Recruitment Funnel</h3>
           <div className="space-y-4">
             {funnelStages.map((stage) => (
@@ -89,7 +89,7 @@ export default function RecruitmentAnalytics() {
         </div>
 
         {/* Candidate Pipeline Table */}
-        <div className="col-span-12 lg:col-span-7 bg-white rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+        <div className="col-span-12 md:col-span-7 bg-white rounded-xl shadow-sm border border-outline-variant overflow-hidden">
           <div className="p-6 border-b border-outline-variant flex justify-between items-center">
             <h3 className="text-[24px] font-semibold text-on-surface">Active Candidates</h3>
             <button className="text-primary text-[14px] font-medium hover:underline">View All →</button>

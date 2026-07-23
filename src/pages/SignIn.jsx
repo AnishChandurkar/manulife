@@ -27,7 +27,7 @@ export default function SignIn() {
             </div>
             <span className="font-semibold text-[24px] tracking-tight">Manulife</span>
           </div>
-          <h1 className="font-bold text-[48px] leading-tight">Empowering Agency <br /><span className="text-active-green">Performance.</span></h1>
+          <h1 className="font-bold text-[32px] md:text-[48px] leading-tight">Empowering Agency <br /><span className="text-active-green">Performance.</span></h1>
           <p className="text-lg text-white/70 max-w-md">
             Access the next-generation digital platform designed specifically for advisors. Manage proposals, claims, and client portfolios with AI-driven insights.
           </p>
@@ -64,7 +64,7 @@ export default function SignIn() {
         </div>
         <div className="w-full max-w-md flex-1 flex flex-col justify-center space-y-8 py-8">
           <div className="space-y-2">
-            <h2 className="text-[32px] font-semibold text-on-surface">Sign in to Platform</h2>
+            <h2 className="text-[24px] md:text-[32px] font-semibold text-on-surface">Sign in to Platform</h2>
             <p className="text-[16px] text-on-surface-variant">Welcome back! Please enter your details.</p>
           </div>
           <label className="block text-[14px] font-medium text-on-surface-variant">Demo role

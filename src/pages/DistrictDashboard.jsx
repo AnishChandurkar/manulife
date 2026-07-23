@@ -5,7 +5,7 @@ const KPICard = ({ label, value, trend, trendPositive = true, highlight = false 
   <div className={`bento-card flex flex-col justify-between ${highlight ? 'border-l-4 border-cta-coral' : ''}`}>
     <span className="text-[14px] font-medium text-on-surface-variant">{label}</span>
     <div className="flex items-end justify-between mt-2">
-      <span className={`text-[40px] font-bold leading-tight ${highlight ? 'text-on-surface' : 'text-on-surface'}`}>{value}</span>
+      <span className={`text-[32px] md:text-[40px] font-bold leading-tight ${highlight ? 'text-on-surface' : 'text-on-surface'}`}>{value}</span>
       {trend && (
         <span className={`text-sm flex items-center font-bold ${trendPositive ? 'text-active-green' : 'text-cta-coral'}`}>
           <span className="material-symbols-outlined text-sm">{trendPositive ? 'trending_up' : 'trending_down'}</span>
@@ -18,7 +18,7 @@ const KPICard = ({ label, value, trend, trendPositive = true, highlight = false 
 
 export default function DistrictDashboard() {
   return (
-    <div className="p-8 max-w-[1600px] mx-auto w-full flex flex-col gap-6">
+    <div className="p-4 md:p-8 max-w-[1600px] mx-auto w-full flex flex-col gap-6">
       {/* KPI Row */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <KPICard label="Total Agencies" value="12" trend="2" />
@@ -29,7 +29,7 @@ export default function DistrictDashboard() {
         <div className="bento-card flex flex-col justify-between bg-primary-container/5">
           <span className="text-[14px] font-medium text-on-surface-variant">AI Insights Score</span>
           <div className="flex items-end justify-between mt-2">
-            <span className="text-[40px] font-bold leading-tight text-primary-container">94%</span>
+            <span className="text-[32px] md:text-[40px] font-bold leading-tight text-primary-container">94%</span>
             <div className="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center">
               <span className="material-symbols-outlined text-primary-container text-sm">auto_awesome</span>
             </div>
@@ -40,7 +40,7 @@ export default function DistrictDashboard() {
       {/* Dashboard Grid */}
       <div className="grid grid-cols-12 gap-6">
         {/* Wide: Agency Performance Comparison */}
-        <div className="col-span-12 lg:col-span-8 bento-card">
+        <div className="col-span-12 md:col-span-8 bento-card">
           <div className="flex justify-between items-start mb-8">
             <div>
               <h3 className="text-[24px] font-semibold text-on-surface">Agency Performance Comparison</h3>
@@ -88,7 +88,7 @@ export default function DistrictDashboard() {
         </div>
 
         {/* AI Predictive Insights */}
-        <div className="col-span-12 lg:col-span-4 bento-card bg-[#eefaf3] border border-primary-container/20">
+        <div className="col-span-12 md:col-span-4 bento-card bg-[#eefaf3] border border-primary-container/20">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
               <span className="material-symbols-outlined material-symbols-filled">auto_awesome</span>
@@ -112,7 +112,7 @@ export default function DistrictDashboard() {
         </div>
 
         {/* Recruitment Funnel */}
-        <div className="col-span-12 lg:col-span-4 bento-card">
+        <div className="col-span-12 md:col-span-4 bento-card">
           <h3 className="text-[24px] font-semibold text-on-surface mb-6">Recruitment Funnel</h3>
           <div className="space-y-4">
             {[
@@ -139,7 +139,7 @@ export default function DistrictDashboard() {
         </div>
 
         {/* Top Performing Agencies Table */}
-        <div className="col-span-12 lg:col-span-8 bento-card">
+        <div className="col-span-12 md:col-span-8 bento-card">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-[24px] font-semibold text-on-surface">Top Performing Agencies</h3>
             <Link to="/agency-explorer" className="text-primary hover:underline text-[14px] font-medium">View All Agencies →</Link>

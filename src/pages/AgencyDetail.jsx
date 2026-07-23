@@ -14,7 +14,7 @@ const barVals = ['$0.8M', '$0.9M', '$1.0M', '$1.1M', '$1.05M', '$1.2M'];
 
 export default function AgencyDetail() {
   return (
-    <div className="pt-6 pb-12 px-8 min-h-screen bg-surface-gray">
+    <div className="pt-6 pb-12 px-4 md:px-8 min-h-screen bg-surface-gray">
       {/* Breadcrumbs */}
       <nav className="flex items-center space-x-2 text-[14px] text-on-surface-variant mb-6">
         <Link to="/dashboard" className="hover:text-primary cursor-pointer">District Performance</Link>
@@ -27,13 +27,13 @@ export default function AgencyDetail() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <h2 className="text-[32px] font-semibold text-on-surface mb-1">Agency Detail View — Toronto West Hub</h2>
+          <h2 className="text-[24px] md:text-[32px] font-semibold text-on-surface mb-1">Agency Detail View — Toronto West Hub</h2>
           <div className="flex items-center text-[16px] text-on-surface-variant">
             <span className="material-symbols-outlined mr-2 text-active-green">person</span>
             Led by <span className="font-semibold text-on-surface ml-1">Sarah Jenkins</span>
           </div>
         </div>
-        <div className="flex space-x-3">
+        <div className="flex flex-wrap gap-3">
           <button className="flex items-center space-x-2 border border-outline px-4 py-2 rounded-lg text-[14px] hover:bg-surface-container-low transition-colors">
             <span className="material-symbols-outlined text-[20px]">download</span>
             <span>Export Data</span>
@@ -56,7 +56,7 @@ export default function AgencyDetail() {
           <div key={kpi.label} className={`bg-white p-6 rounded-xl shadow-sm flex flex-col border-l-4 ${kpi.color}`}>
             <span className="text-[14px] text-on-surface-variant mb-2">{kpi.label}</span>
             <div className="flex items-end space-x-2">
-              <span className="text-[40px] font-bold leading-tight text-on-surface">{kpi.value}</span>
+              <span className="text-[32px] md:text-[40px] font-bold leading-tight text-on-surface">{kpi.value}</span>
               <span className={`font-semibold mb-2 flex items-center text-[14px] ${kpi.trendColor}`}>
                 <span className="material-symbols-outlined text-[18px]">trending_up</span>
                 {kpi.trend}
@@ -69,7 +69,7 @@ export default function AgencyDetail() {
       {/* Bento Grid */}
       <div className="grid grid-cols-12 gap-6 mb-8">
         {/* Advisor Roster */}
-        <div className="col-span-12 lg:col-span-8 bg-white rounded-xl shadow-sm overflow-hidden flex flex-col">
+        <div className="col-span-12 md:col-span-8 bg-white rounded-xl shadow-sm overflow-hidden flex flex-col">
           <div className="p-6 border-b border-surface-variant flex justify-between items-center">
             <h3 className="text-[24px] font-semibold text-on-surface">Advisor Roster</h3>
             <span className="text-[14px] text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">34 Active Agents</span>
@@ -111,7 +111,7 @@ export default function AgencyDetail() {
         </div>
 
         {/* AI Insight */}
-        <div className="col-span-12 lg:col-span-4 flex flex-col space-y-6">
+        <div className="col-span-12 md:col-span-4 flex flex-col space-y-6">
           <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-sm border-l-4 border-active-green flex flex-col relative overflow-hidden flex-grow">
             <div className="absolute -right-10 -top-10 opacity-10">
               <span className="material-symbols-outlined text-[120px] text-active-green">psychology</span>
@@ -156,7 +156,7 @@ export default function AgencyDetail() {
             <button className="px-4 py-1.5 rounded-md hover:bg-white/50 text-on-surface-variant">1 Year</button>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Premium Trend Bar Chart */}
           <div className="flex flex-col">
             <div className="flex items-center justify-between mb-4">

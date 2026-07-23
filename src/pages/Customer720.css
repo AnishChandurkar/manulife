@@ -27,3 +27,16 @@
   left: 112px;
   right: 32px;
 }
+
+/* Mobile: sidebar becomes an overlay drawer (no reserved space) and
+   content padding shrinks to match the rest of the app. */
+@media (max-width: 767px) {
+  .customer-720-root > main > div {
+    padding: 16px 16px 128px;
+  }
+
+  .customer-720-root footer {
+    left: 16px;
+    right: 16px;
+  }
+}

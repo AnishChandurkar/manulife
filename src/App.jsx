@@ -16,6 +16,8 @@ import AdvisorDashboard from './pages/AdvisorDashboard';
 import RoleDashboard from './pages/RoleDashboard';
 import Customer720 from './pages/Customer720';
 import MyDay from './pages/MyDay';
+import Rewards from "./pages/Rewards";
+import ServiceRequests from "./pages/ServiceRequests";
 import ContentStudio from './pages/ContentStudio';
 import MeetingCopilot from './pages/MeetingCopilot';
 import ProposalIntelligence from './pages/ProposalIntelligence';
@@ -35,6 +37,7 @@ function RoleRoute({ children }) {
 
 function AppLayout() {
   const [aiOpen, setAiOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const location = useLocation();
   const isLogin = location.pathname === '/login';
 
@@ -52,20 +55,33 @@ function AppLayout() {
     location.pathname.startsWith('/service-requests') ||
     location.pathname.startsWith('/rewards') ||
     location.pathname.startsWith('/notifications');
-    
+
 
   return (
     <div className={`flex min-h-screen font-sans bg-[#f7faf8] text-on-surface antialiased`}>
-      {/* Sidebar — hidden on login page */}
-      {!isLogin && <Sidebar onToggleAI={() => setAiOpen(v => !v)} />}
+      {/* Sidebar — hidden on login page. Fixed rail on desktop/tablet (md+),
+          hamburger-triggered slide-out drawer on mobile (<md). */}
+      {!isLogin && (
+        <Sidebar
+          isMobileOpen={mobileNavOpen}
+          onCloseMobile={() => setMobileNavOpen(false)}
+          onToggleAI={() => setAiOpen(v => !v)}
+        />
+      )}
 
-      {/* Main Content */}
-      <div className={`flex flex-col flex-grow ${!isLogin ? 'ml-[80px]' : ''}`}>
+      {/* Main Content — desktop/tablet reserve the 80px sidebar rail; on
+          mobile the sidebar is an overlay drawer, so no reserved margin. */}
+      <div className={`flex flex-col flex-grow min-w-0 ${!isLogin ? 'md:ml-[80px]' : ''}`}>
         {/* Topbar — hidden on login page */}
-        {!isLogin && <Topbar onToggleAI={() => setAiOpen(v => !v)} />}
+        {!isLogin && (
+          <Topbar
+            onToggleAI={() => setAiOpen(v => !v)}
+            onToggleMobileNav={() => setMobileNavOpen(v => !v)}
+          />
+        )}
 
         {/* Page Content */}
-        <main className="flex-grow">
+        <main className="flex-grow min-w-0">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<SignIn />} />
@@ -78,11 +94,11 @@ function AppLayout() {
             <Route path="/advisor-dashboard" element={<RoleRoute><AdvisorDashboard /></RoleRoute>} />
             <Route path="/customer-720" element={<RoleRoute><Customer720 /></RoleRoute>} />
             <Route path="/my-day" element={<RoleRoute><MyDay /></RoleRoute>} />
+            <Route path="/rewards" element={<Rewards />} />
+            <Route path="/service-requests" element={<ServiceRequests />} />
             <Route path="/content-studio" element={<RoleRoute><ContentStudio /></RoleRoute>} />
             <Route path="/meetings" element={<RoleRoute><MeetingCopilot /></RoleRoute>} />
             <Route path="/proposal-intelligence" element={<RoleRoute><ProposalIntelligence /></RoleRoute>} />
-            <Route path="/service-requests" element={<RoleRoute><Customer720 /></RoleRoute>} />
-            <Route path="/rewards" element={<RoleRoute><AdvisorDashboard /></RoleRoute>} />
             <Route path="/notifications" element={<RoleRoute><Notifications /></RoleRoute>} />
             {/* Fallback */}
             <Route path="*" element={<LandingPage />} />

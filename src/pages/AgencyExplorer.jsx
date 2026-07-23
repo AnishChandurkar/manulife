@@ -12,7 +12,7 @@ const agencies = [
 
 export default function AgencyExplorer() {
   return (
-    <div className="p-8 min-h-screen bg-surface-gray">
+    <div className="p-4 md:p-8 min-h-screen bg-surface-gray">
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
@@ -21,13 +21,13 @@ export default function AgencyExplorer() {
             <span>/</span>
             <span className="text-primary">Agency Explorer</span>
           </nav>
-          <h2 className="text-[32px] font-semibold text-on-surface">Agency Explorer</h2>
+          <h2 className="text-[24px] md:text-[32px] font-semibold text-on-surface">Agency Explorer</h2>
           <p className="text-[16px] text-on-surface-variant mt-1">Ontario Central District — 6 Agencies, 138 Active Advisors</p>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="relative">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="relative flex-1 min-w-[200px] sm:flex-none">
             <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
-            <input className="pl-10 pr-4 py-2 bg-white border border-outline-variant rounded-full text-[14px] focus:outline-none focus:ring-2 focus:ring-active-green w-64" placeholder="Search agencies..." type="text" />
+            <input className="pl-10 pr-4 py-2 bg-white border border-outline-variant rounded-full text-[14px] focus:outline-none focus:ring-2 focus:ring-active-green w-full sm:w-64" placeholder="Search agencies..." type="text" />
           </div>
           <button className="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg text-[14px] hover:bg-white transition-colors">
             <span className="material-symbols-outlined text-[20px]">filter_list</span>

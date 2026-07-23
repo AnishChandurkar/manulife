@@ -38,7 +38,7 @@ export default function AdvisorDashboard() {
       <main className="flex-1 min-h-screen flex flex-col relative">
       {/* TopNavBar */}
       {/* Content Area */}
-      <div className="p-8 space-y-8 max-w-[1600px] mx-auto w-full">
+      <div className="p-4 md:p-8 space-y-8 max-w-[1600px] mx-auto w-full">
       {/* Headline Section */}
       <section className="flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
@@ -210,9 +210,9 @@ export default function AdvisorDashboard() {
       </div>
       </section>
       {/* Main Split Layout */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Left Column (2/3) */}
-      <div className="xl:col-span-2 space-y-8">
+      <div className="md:col-span-2 space-y-8">
       {/* Chart Card */}
       <div className="bg-white p-8 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row gap-8 relative overflow-hidden">
       <div className="flex-1">
@@ -220,7 +220,7 @@ export default function AdvisorDashboard() {
       <h3 className="text-lg font-bold text-on-surface">Monthly Premium vs Target</h3>
       <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-bold text-sm font-semibold">84% Achieved</span>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
       <div>
       <p className="text-xs text-on-surface-variant uppercase tracking-wider">Current Status</p>
       <p className="text-3xl font-bold text-primary leading-none">$42,100</p>
